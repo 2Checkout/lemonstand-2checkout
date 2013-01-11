@@ -17,7 +17,7 @@
 1. Sign in to your 2Checkout account. 
 2. Click the **Account** tab and **Site Management** subcategory. 
 3. Under **Direct Return** select **Header Redirect** or **Given links back to my website**.
-4. Enter your **Secret Word**._(Must be the same value entered in your WP-Invoice admin.)_
+4. Enter your **Secret Word**._(Must be the same value entered in your LemonStand admin.)_
 5. Click **Save Changes**.
 6. 
 
