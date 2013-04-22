@@ -8,3 +8,4 @@
   {% endfor %}
   <input type="submit" value="Pay with 2Checkout"/>
 </form>
+{{ payment_method_obj.get_checkout_mode(payment_method)|raw }}

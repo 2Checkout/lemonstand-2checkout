@@ -15,12 +15,10 @@
 		public function build_config_ui($host_obj, $context = null)
 		{
 			$host_obj->add_field('demo_mode', 'Demo Mode')->tab('Configuration')->renderAs(frm_onoffswitcher)->comment('2Checkout Demo Mode', 'above');
+			$host_obj->add_field('direct_checkout', 'Direct Checkout')->tab('Configuration')->renderAs(frm_onoffswitcher)->comment('Use Direct Checkout', 'above');
 			$host_obj->add_field('sid', 'Seller ID')->tab('Configuration')->renderAs(frm_text)->comment('2Checkout Account Number.', 'above')->validation()->fn('trim')->required('Please provide your 2Checkout account number.');
-
 			$host_obj->add_field('secret_word', 'Secret Word')->tab('Configuration')->renderAs(frm_text)->comment('2Checkout Secret Word.', 'above')->validation()->fn('trim')->required('Please provide your 2Checkout Secret Word.');
-
 			$host_obj->add_field('cancel_page', 'Cancel Page', 'left')->tab('Configuration')->renderAs(frm_dropdown)->formElementPartial(PATH_APP.'/modules/shop/controllers/partials/_page_selector.htm')->comment('Page which the customer’s browser is redirected to if payment is cancelled.', 'above')->emptyOption('<please select a page>');
-
 			$host_obj->add_field('order_status', 'Order Status', 'right')->tab('Configuration')->renderAs(frm_dropdown)->comment('Select status to assign the order in case of successful payment.', 'above');
 		}
 
@@ -175,6 +173,18 @@
 				$result[$key] = str_replace("\n", ' ', $value);
 			}
 			return $result;
+		}
+
+		public function get_checkout_mode($host_obj)
+		{
+			if ($host_obj->direct_checkout)
+			{
+				return '<script src="https://www.2checkout.com/static/checkout/javascript/direct.min.js"></script>';
+			}
+			else
+			{
+				return '';
+			}
 		}
 
 		public function process_payment_form($data, $host_obj, $order, $back_end = false)

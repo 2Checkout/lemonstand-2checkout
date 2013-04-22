@@ -11,3 +11,5 @@
 	<? endforeach ?>
 	<?= backend_button('Pay with 2Checkout', array('href'=>"#", 'onclick'=>'$(this).getForm().submit(); return false;')) ?>
 </form>
+
+<?= $payment_method_obj->get_checkout_mode($payment_method) ?>
