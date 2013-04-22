@@ -10,7 +10,8 @@
 3. In your LemonStand admin, create a new payment method and select 2Checkout.
 4. Enter your **2Checkout Seller ID**. _(2Checkout Account Number)_ 
 5. Enter your **2Checkout Secret Word**. _(Must be the same value entered on your 2Checkout Site Management page.)_
-6. Save your changes.
+6. Select your checkout method. _(Direct Checkout or Dynamic Checkout)_
+7. Save your changes.
 
 ### 2Checkout Settings
 
@@ -19,6 +20,5 @@
 3. Under **Direct Return** select **Header Redirect** or **Given links back to my website**.
 4. Enter your **Secret Word**._(Must be the same value entered in your LemonStand admin.)_
 5. Click **Save Changes**.
-6. 
 
 Please feel free to contact 2Checkout directly with any integration questions.
